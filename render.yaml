@@ -1,0 +1,14 @@
+services:
+  - type: web
+    env: python
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:flask_app
+    name: product-recommender
+    resources:
+      cpu: 1
+      memory: 1024
+    rootDir: .
