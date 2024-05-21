@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Suggestions</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Suggestions for "{{ product_name }}"</h1>
+    <p>No exact matches found for your search. Here are some similar product names:</p>
+    <ul>
+      {% for name, _ in suggested_products %}
+      <li>{{ name }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

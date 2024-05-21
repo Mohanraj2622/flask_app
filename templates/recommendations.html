@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Recommendations</title>
+    <style>
+        .product-card {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recommended Products Based on Your Search: {{ product_name }}</h1>
+    <ul>
+        {% for Name, Image in recommended_products %}
+        <li>
+            <div class="product-card">
+                {% if Image %}
+                <img src="{{ Image }}" alt="{{ Name }} Image">
+                {% endif %}
+                <h3>{{ Name }}</h3>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
